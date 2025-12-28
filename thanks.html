@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank you — NBUSA</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<main class="thanks" style="min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center">
+  <div class="thanks-card" style="max-width:560px;margin:0 16px;padding:28px;border:1px solid #d0d7de;border-radius:16px;background:var(--bg);box-shadow:0 10px 30px rgba(0,0,0,.06)">
+    <h1>Thank you! Your message has been sent.</h1>
+    <p>We’ll get back to you shortly.</p>
+    <a class="btn" href="/">Return to Home</a>
+    <p class="muted">You will be redirected in <span id="sec">5</span>s…</p>
+  </div>
+</main>
+<script>
+let n=5, el=document.getElementById('sec');
+const t=setInterval(()=>{n--; el.textContent=n; if(n<=0){clearInterval(t); window.location.href='/' }},1000);
+</script>
+</body></html>

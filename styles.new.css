@@ -1,0 +1,31 @@
+.brand {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10001;
+}
+
+.brand-logo {
+  height: 90px;
+  width: auto;
+  transition: height 0.3s ease;
+  display: block;
+}
+
+.header.compact .brand-logo {
+  height: 56px;
+}
+
+.brand-logo-light {
+  display: none;
+}
+
+.dark .brand-logo-dark {
+  display: none;
+}
+
+.dark .brand-logo-light {
+  display: block;
+}
+
+/* Rest of your existing CSS */
