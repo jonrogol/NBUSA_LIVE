@@ -193,8 +193,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
-    padding: 120px 0 60px;
+    min-height: auto;
+    padding: 110px 0 60px;
   }
 
   .hero-flags {
@@ -225,7 +225,8 @@
 
 @media (max-width: 620px) {
   .hero {
-    padding-bottom: clamp(100px, 22vh, 140px);
+    padding-top: clamp(96px, 20vw, 110px);
+    padding-bottom: clamp(90px, 22vh, 130px);
   }
 
   .hero-copy {
@@ -238,6 +239,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 90px 0 48px;
+  }
+
   .hero-title {
     font-size: 36px;
   }
@@ -249,5 +254,22 @@
   .flag {
     width: 45px;
     height: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 80px 0 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image {
+    animation: none;
+    transform: none;
+  }
+
+  .hero-background {
+    will-change: auto;
   }
 }

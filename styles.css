@@ -270,8 +270,19 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background: var(--bg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Top progress bar - AWB blue gradient */
@@ -2053,7 +2064,7 @@ section[id] {
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   align-items: stretch;
 }
@@ -3708,6 +3719,13 @@ textarea {
   filter: grayscale(0);
 }
 
+@media (max-width: 480px) {
+  .map-embed {
+    height: 260px;
+    margin-top: 32px;
+  }
+}
+
 /* Footer */
 .footer {
   background: var(--footer-bg);
@@ -4348,6 +4366,35 @@ textarea {
     :root:not(.dark):not([data-theme='dark']) .stat {
       color: var(--accent-strong);
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar {
+    gap: 8px;
+    padding: 0 0 0 12px;
+  }
+
+  .lang-current {
+    padding: 0 12px;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .lang-flag {
+    width: 20px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .toolbar {
+    gap: 6px;
+    padding-left: 8px;
+  }
+
+  .lang-current {
+    padding: 0 10px;
   }
 }
 
