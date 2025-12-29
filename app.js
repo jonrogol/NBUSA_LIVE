@@ -548,9 +548,9 @@
     'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
   const GROUP_PDF_URLS = Object.freeze({
-    usa: 'https://raw.githubusercontent.com/jonrogol/NBUSA_LIVE/main/assets/profiles/NB_USA_PROFILE.pdf',
-    japan: 'https://raw.githubusercontent.com/jonrogol/NBUSA_LIVE/main/assets/profiles/NB_JAPAN_PROFILE.pdf',
-    brazil: 'https://raw.githubusercontent.com/jonrogol/NBUSA_LIVE/main/assets/profiles/NB_BRAZIL_PROFILE.pdf',
+    usa: 'https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_USA_PROFILE.pdf',
+    japan: 'https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_JAPAN_PROFILE.pdf',
+    brazil: 'https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_BRAZIL_PROFILE.pdf',
   });
 
   const getLocalizedString = (key) => {
