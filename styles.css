@@ -3516,10 +3516,19 @@ h2 {
   :root[lang='ja'] .hero-title {
     font-size: clamp(28px, 7.8vw, 44px);
     line-height: 1.24;
+    word-break: normal;
+    line-break: auto;
+    overflow-wrap: anywhere;
   }
 
   :root[lang='ja'] .hero-title .jp-line {
     white-space: normal;
+  }
+
+  :root[lang='ja'] .hero-subtitle {
+    word-break: normal;
+    line-break: auto;
+    overflow-wrap: anywhere;
   }
 
   :root[lang='ja'] .hero-clarifier,
