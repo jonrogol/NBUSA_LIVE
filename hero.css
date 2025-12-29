@@ -358,6 +358,8 @@
 
   .hero-cta {
     padding: 0 clamp(12px, 6vw, 28px);
+  }
+
   .hero-pills {
     flex-direction: column;
     width: 100%;
@@ -367,8 +369,6 @@
 
   .hero-pills li {
     text-align: center;
-  }
-
   }
 }
 

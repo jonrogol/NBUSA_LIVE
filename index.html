@@ -60,6 +60,7 @@
               <a class="nav-link contact-link" href="#contact" data-i18n="nav_contact">Contact</a>
             </nav>
             <div class="toolbar">
+              <span class="toolbar-label" aria-hidden="true" data-i18n="nav_preferences">Preferences</span>
               <div class="toolbar-group" aria-label="Display options">
                 <div class="lang-select" data-open="false">
                   <button class="lang-current" aria-expanded="false" aria-haspopup="true">
@@ -128,7 +129,11 @@
                     </button>
                   </div>
                 </div>
-                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                <button
+                  id="theme-toggle"
+                  class="icon-btn"
+                  aria-label="Toggle light/dark mode"
+                >
                   <svg
                     class="theme-icon theme-icon-sun"
                     width="24"
@@ -351,16 +356,16 @@
           </div>
           <div class="hero-proof" aria-label="Key proof points">
             <span>
-              <strong>25+ years</strong>
-              <span>international trade experience</span>
+              <strong data-i18n="hero_stat_years_value">25+ years</strong>
+              <span data-i18n="hero_stat_years_label">international trade experience</span>
             </span>
             <span>
-              <strong>3 core markets</strong>
-              <span>Japan · Brazil · USA</span>
+              <strong data-i18n="hero_stat_markets_value">3 core markets</strong>
+              <span data-i18n="hero_stat_markets_label">Japan · Brazil · USA</span>
             </span>
             <span>
-              <strong>ISO &amp; HACCP</strong>
-              <span>compliance-ready partners</span>
+              <strong data-i18n="hero_stat_cert_value">ISO &amp; HACCP</strong>
+              <span data-i18n="hero_stat_cert_label">compliance-ready partners</span>
             </span>
           </div>
           <a class="scroll-cue" href="#about" aria-label="Scroll to learn about NBUSA">
@@ -937,7 +942,7 @@
             <div class="card-logo group-card__logo-zone">
               <img
                 loading="lazy"
-                src="assets/logos/nb_japan.png"
+                src="assets/logos/nbusa-japan.svg"
                 alt="New Business Japan logo"
               />
             </div>
@@ -1161,10 +1166,11 @@
             <ul class="links social-icons">
               <li>
                 <a
-                  href="https://www.linkedin.com/company/new-business-usa/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
+                  href="#"
+                  role="button"
+                  data-social-key="linkedin"
+                  data-social-message="LinkedIn is coming soon. Stay tuned!"
+                  aria-label="LinkedIn — stay tuned"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
@@ -1174,7 +1180,13 @@
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Instagram (coming soon)">
+                <a
+                  href="#"
+                  role="button"
+                  data-social-key="instagram"
+                  data-social-message="Instagram is coming soon. Stay tuned!"
+                  aria-label="Instagram — stay tuned"
+                >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
                       d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
@@ -1183,10 +1195,16 @@
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Facebook (coming soon)">
+                <a
+                  href="#"
+                  role="button"
+                  data-social-key="facebook"
+                  data-social-message="Facebook is coming soon. Stay tuned!"
+                  aria-label="Facebook — stay tuned"
+                >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
-                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                      d="M22.525 0H1.477C.661 0 0 .645 0 1.438v21.124C0 23.356.66 24 1.477 24h11.392v-9.281H9.754V11.13h3.115V8.414c0-3.07 1.88-4.739 4.628-4.739 1.316 0 2.447.095 2.776.141v3.205l-1.906.001c-1.495 0-1.785.71-1.785 1.753v2.299h3.566l-.465 3.589h-3.101V24h6.078C23.34 24 24 23.356 24 22.562V1.438C24 .645 23.34 0 22.525 0z"
                     />
                   </svg>
                 </a>
@@ -1222,8 +1240,9 @@
           nav_services: 'Services',
           nav_group: 'Our Group',
           nav_downloads: 'Downloads',
-          nav_contact: 'Contact',
+          nav_contact: 'Contact us',
           nav_contact_cta: 'Schedule a consult',
+          nav_preferences: 'Preferences',
           hero_title: 'Connecting Japan, Brazil, and North America through trade and innovation.',
           hero_support:
             'Helping food and packaging brands move products across borders with regulatory confidence and operational reliability.',
@@ -1231,6 +1250,12 @@
           hero_pill2: 'Importers & retail buyers',
           hero_pill3: 'Compliance-focused logistics teams',
           hero_tag: 'Credibility • Partnership • International Reach • Innovation • Reliability',
+          hero_stat_years_value: '25+ years',
+          hero_stat_years_label: 'international trade experience',
+          hero_stat_markets_value: '3 core markets',
+          hero_stat_markets_label: 'Japan · Brazil · USA',
+          hero_stat_cert_value: 'ISO & HACCP',
+          hero_stat_cert_label: 'compliance-ready partners',
           hero_cta_primary: 'Book a trade consult',
           hero_clarifier:
             'We build and run the cross-border supply chain so food and packaging buyers can move product between Japan, Brazil, and North America with confidence.',
@@ -1387,6 +1412,12 @@
           footer_connect: 'Connect',
           footer_legal:
             '© 2025 New Business USA Inc. | Member of AWB Group Japan. Registered in the State of Delaware, U.S.A.',
+          social_message_linkedin: 'LinkedIn is coming soon. Stay tuned!',
+          social_message_instagram: 'Instagram is coming soon. Stay tuned!',
+          social_message_facebook: 'Facebook is coming soon. Stay tuned!',
+          social_label_linkedin: 'LinkedIn — stay tuned',
+          social_label_instagram: 'Instagram — stay tuned',
+          social_label_facebook: 'Facebook — stay tuned',
         },
         ja: {
           nav_about: '会社概要',
@@ -1395,6 +1426,7 @@
           nav_downloads: '資料ダウンロード',
           nav_contact: 'お問い合わせ',
           nav_contact_cta: '相談を予約',
+          nav_preferences: '設定',
           hero_title:
             '<span class="jp-line">貿易とイノベーションで</span><span class="jp-line">日本・ブラジル・北米をつなぐ。</span>',
           hero_support:
@@ -1403,6 +1435,12 @@
           hero_pill2: '輸入業者・小売バイヤー',
           hero_pill3: 'コンプライアンス重視の物流チーム',
           hero_tag: '信頼性 • パートナーシップ • グローバルビジョン • イノベーション • 安心',
+          hero_stat_years_value: '25年以上',
+          hero_stat_years_label: '国際貿易の実績',
+          hero_stat_markets_value: '主要3市場',
+          hero_stat_markets_label: '日本・ブラジル・米国',
+          hero_stat_cert_value: 'ISO・HACCP',
+          hero_stat_cert_label: 'コンプライアンス対応パートナー',
           hero_cta_primary: 'お問い合わせ',
           hero_clarifier:
             '食品・包装バイヤーが日本・ブラジル・北米間で安心して製品を動かせるよう、越境サプライチェーンを構築・運営しています。',
@@ -1555,14 +1593,21 @@
           footer_connect: '連絡する',
           footer_legal:
             '© 2025 New Business USA Inc. | AWBグループ・ジャパンのメンバー。米国デラウェア州に登録。',
+          social_message_linkedin: 'LinkedInページは近日公開予定です。公開まで今しばらくお待ちください。',
+          social_message_instagram: 'Instagramは近日公開予定です。公開まで今しばらくお待ちください。',
+          social_message_facebook: 'Facebookページは近日公開予定です。公開まで今しばらくお待ちください。',
+          social_label_linkedin: 'LinkedIn（近日公開）',
+          social_label_instagram: 'Instagram（近日公開）',
+          social_label_facebook: 'Facebook（近日公開）',
         },
         pt: {
           nav_about: 'Sobre',
           nav_services: 'Serviços',
           nav_group: 'Nosso Grupo',
           nav_downloads: 'Downloads',
-          nav_contact: 'Contato',
+          nav_contact: 'Fale conosco',
           nav_contact_cta: 'Agende uma consulta',
+          nav_preferences: 'Preferências',
           hero_title:
             'Conectando Japão, Brasil e América do Norte por meio de comércio e inovação.',
           hero_support:
@@ -1571,6 +1616,12 @@
           hero_pill2: 'Importadores e compradores de varejo',
           hero_pill3: 'Equipes de logística focadas em compliance',
           hero_tag: 'Credibilidade • Parceria • Alcance Internacional • Inovação • Confiabilidade',
+          hero_stat_years_value: '25+ anos',
+          hero_stat_years_label: 'experiência em comércio internacional',
+          hero_stat_markets_value: '3 mercados principais',
+          hero_stat_markets_label: 'Japão · Brasil · EUA',
+          hero_stat_cert_value: 'ISO e HACCP',
+          hero_stat_cert_label: 'parceiros prontos para compliance',
           hero_cta_primary: 'Agende uma consultoria comercial',
           hero_clarifier:
             'Construímos e operamos a cadeia de suprimentos transfronteiriça para que compradores de alimentos e embalagens movam produtos entre Japão, Brasil e América do Norte com confiança.',
@@ -1728,6 +1779,12 @@
           footer_connect: 'Conectar',
           footer_legal:
             '© 2025 New Business USA Inc. | Membro do AWB Group Japan. Registrada no estado de Delaware, EUA.',
+          social_message_linkedin: 'LinkedIn em breve. Fique ligado!',
+          social_message_instagram: 'Instagram em breve. Fique ligado!',
+          social_message_facebook: 'Facebook em breve. Fique ligado!',
+          social_label_linkedin: 'LinkedIn — em breve',
+          social_label_instagram: 'Instagram — em breve',
+          social_label_facebook: 'Facebook — em breve',
         },
       };
     </script>

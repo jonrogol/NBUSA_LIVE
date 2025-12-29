@@ -91,6 +91,49 @@
   });
 })();
 
+/* Social placeholder toast */
+(() => {
+  const ready = (fn) => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn, { once: true });
+    } else {
+      fn();
+    }
+  };
+
+  ready(() => {
+    const links = document.querySelectorAll('[data-social-key]');
+    if (!links.length) return;
+
+    let toast = null;
+    const showToast = (message) => {
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'social-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toast);
+      }
+
+      toast.textContent = message || 'Stay tuned — channels coming soon.';
+      toast.classList.add('is-visible');
+      window.clearTimeout(toast._hideTimer);
+      toast._hideTimer = window.setTimeout(() => {
+        toast.classList.remove('is-visible');
+      }, 2500);
+    };
+
+    links.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const message = link.dataset.socialMessage || 'Stay tuned — channels coming soon.';
+        showToast(message);
+      });
+    });
+  });
+})();
+
 /* Hero carousel support */
 (() => {
   const hero = document.querySelector('.hero.has-carousel');
@@ -1138,6 +1181,21 @@
       if (servicesHeading && map.services_title) {
         servicesHeading.textContent = map.services_title;
       }
+
+      document.querySelectorAll('[data-social-key]').forEach((link) => {
+        const key = link.getAttribute('data-social-key');
+        if (!key) return;
+        const messageKey = `social_message_${key}`;
+        const labelKey = `social_label_${key}`;
+        const message = map[messageKey];
+        const label = map[labelKey];
+        if (message) {
+          link.setAttribute('data-social-message', message);
+        }
+        if (label) {
+          link.setAttribute('aria-label', label);
+        }
+      });
     };
 
     applyLanguage(language, { persist: false });
