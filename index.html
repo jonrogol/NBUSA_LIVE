@@ -1088,6 +1088,7 @@
             type="hidden"
             name="_next"
             value="https://newbusinessusa.us/thanks.html"
+            data-next-dynamic
           />
           <div class="grid2">
             <label
@@ -1731,6 +1732,20 @@
       };
     </script>
     <script src="app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const field = document.querySelector('input[name="_next"][data-next-dynamic]');
+        if (!field) return;
+        try {
+          const origin = window.location.origin || '';
+          if (!origin || origin === 'null') return;
+          const normalized = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+          field.value = `${normalized}/thanks.html`;
+        } catch (err) {
+          console.warn('Unable to set redirect URL', err);
+        }
+      });
+    </script>
     <!-- Cookie / consent banner -->
     <div
       id="cookie-banner"
