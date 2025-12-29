@@ -1,0 +1,2 @@
+# Don’t commit big PDFs / profiles
+assets/profiles/*.pdf
