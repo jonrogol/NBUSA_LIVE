@@ -394,7 +394,7 @@ a.matcha-link:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 5vw, 48px);
 }
 
 /* Section wrapper with dark surface - consistent elevation */
@@ -802,8 +802,7 @@ a.underline:hover {
 /* Header container sizing */
 .header .container {
   max-width: 1200px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-inline: clamp(16px, 4vw, 36px);
 }
 
 /* Apple-style header container - no floating pill, full width */
@@ -1157,6 +1156,32 @@ a.underline:hover {
   }
   .nav .contact-link {
     display: none;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 961px) {
+  .header-main-inner {
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+  }
+
+  .nav {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: clamp(10px, 2.5vw, 20px);
+  }
+
+  .contact-cta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: min(100%, 420px);
+    min-height: 52px;
+    justify-self: flex-start;
+  }
+
+  .toolbar {
+    grid-column: 3;
+    align-self: center;
   }
 }
 
@@ -1735,12 +1760,16 @@ a.underline:hover {
     padding: 0 20px;
   }
 
+  .lang-current .lang-code {
+    display: none;
+  }
+
   .lang-name {
     display: inline;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1280px) {
   .lang-select {
     display: flex;
     align-items: center;
@@ -1901,8 +1930,8 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  padding: 48px 56px;
+  gap: clamp(20px, 4vw, 40px);
+  padding: clamp(32px, 6vw, 56px) clamp(24px, 6vw, 56px);
   border-radius: 12px;
   border: 1px solid rgba(13, 123, 149, 0.16);
   background: linear-gradient(
@@ -2287,7 +2316,7 @@ section[id] {
 .partner-grid {
   gap: 28px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
 }
 
 .partner-card {
@@ -2391,6 +2420,12 @@ section[id] {
   color: #8ae1f7;
 }
 
+@media (max-width: 1024px) {
+  .partner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .partner-card {
     padding: 52px 24px 28px;
@@ -2399,6 +2434,12 @@ section[id] {
   .group-card__meta {
     top: 18px;
     left: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .partner-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2465,7 +2506,7 @@ body.modal-open {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  padding: clamp(12px, 4vw, 32px);
+  padding: clamp(12px, 4vw, 36px);
   overflow-y: auto;
   min-height: 100dvh;
 }
@@ -2486,8 +2527,8 @@ body.modal-open {
 .modal-panel {
   position: relative;
   z-index: 1;
-  width: min(640px, 100%);
-  max-height: calc(100dvh - 64px);
+  width: min(640px, calc(100% - clamp(24px, 8vw, 96px)));
+  max-height: calc(100dvh - clamp(48px, 12vh, 128px));
   overflow-y: auto;
   background: var(--surface-elevated, #fdfdfd);
   border-radius: 18px;
@@ -2600,8 +2641,8 @@ body.modal-open {
   background: transparent;
   color: var(--text-muted);
   font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -2611,6 +2652,17 @@ body.modal-open {
   outline-offset: 2px;
 }
 
+@media (max-width: 768px) {
+  .modal {
+    align-items: flex-start;
+  }
+
+  .modal-panel {
+    width: min(560px, calc(100% - 24px));
+    max-height: calc(100dvh - 24px);
+  }
+}
+
 @media (max-width: 540px) {
   .modal {
     align-items: flex-start;
@@ -2618,7 +2670,6 @@ body.modal-open {
   }
 
   .modal-panel {
-    max-height: calc(100dvh - 24px);
     padding: 20px 18px 24px;
     border-radius: 16px;
   }
@@ -3193,18 +3244,6 @@ h2 {
   }
 }
 
-  .toolbar-group {
-    width: 100%;
-    justify-content: space-between;
-    padding: 4px 10px;
-  }
-
-  .toolbar-group .lang-current {
-    flex: 1;
-    justify-content: space-between;
-    padding: 0 8px;
-  }
-
 .culture-image {
   margin: 0;
   border-radius: 20px;
@@ -3278,10 +3317,6 @@ h2 {
   }
 
   .culture-image {
-  .toolbar-group {
-    padding: 4px 8px;
-  }
-
     max-width: 600px;
     margin: 0 auto;
   }
@@ -4335,8 +4370,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
-  padding: 48px;
+  gap: clamp(24px, 5vw, 60px);
+  padding: clamp(24px, 6vw, 48px);
   background: linear-gradient(135deg, rgba(10, 94, 122, 0.05), rgba(200, 16, 46, 0.05));
   border: none;
   position: relative;
@@ -4399,8 +4434,8 @@ textarea {
 
 /* Feature media (image on the right) */
 .feature-media {
-  width: 48%;
-  max-width: 560px;
+  width: min(48%, 560px);
+  max-width: 100%;
   border-radius: 24px;
   overflow: hidden;
   flex-shrink: 0;

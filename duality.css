@@ -2,10 +2,10 @@
 .hero-duality {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: clamp(560px, 78vh, 720px);
+  min-height: clamp(520px, 75vh, 720px);
   position: relative;
   overflow: hidden;
-  padding: 140px 0 96px;
+  padding: clamp(96px, 12vw, 140px) 0 clamp(56px, 10vw, 96px);
   gap: 0;
 }
 
@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px;
+  padding: clamp(32px, 5vw, 60px);
   overflow: hidden;
 }
 
@@ -76,8 +76,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
-  height: 220px;
+  width: clamp(180px, 18vw, 240px);
+  height: clamp(180px, 18vw, 240px);
   background: radial-gradient(circle at center,
     rgba(15,138,165,0.25),
     rgba(15,138,165,0.15) 40%,
@@ -95,7 +95,7 @@
 }
 
 .hero-bridge img {
-  width: 160px;
+  width: clamp(120px, 14vw, 180px);
   height: auto;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
   transition: transform 0.3s ease;
@@ -113,14 +113,13 @@
 
 .hero-motto {
   position: absolute;
-  bottom: 60px;
+  bottom: clamp(24px, 6vw, 60px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   color: white;
   text-align: center;
-  width: 94%;
-  max-width: 900px;
+  width: min(94%, 960px);
   background: linear-gradient(90deg,
     rgba(10, 94, 122, 0.1),
     rgba(200, 16, 46, 0.1) 50%,
@@ -128,8 +127,8 @@
   );
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 24px;
-  border-radius: 100px;
+  padding: clamp(18px, 3vw, 28px);
+  border-radius: clamp(32px, 10vw, 100px);
   border: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -149,8 +148,8 @@
   }
 
   .hero-side {
-    min-height: 450px;
-    padding: 60px 24px;
+    min-height: 420px;
+    padding: clamp(40px, 8vw, 60px) 24px;
   }
 
   .hero-side-content {
@@ -163,19 +162,16 @@
   }
 
   .hero-bridge {
-    position: fixed;
-    top: auto;
-    bottom: 24px;
-    right: 24px;
-    left: auto;
+    position: static;
     transform: none;
-    width: 120px;
-    height: 120px;
+    width: clamp(140px, 34vw, 200px);
+    height: clamp(140px, 34vw, 200px);
+    margin: 24px auto 0;
     animation: none;
   }
 
   .hero-bridge img {
-    width: 80px;
+    width: clamp(100px, 24vw, 150px);
   }
 
   .hero-motto {
@@ -199,7 +195,7 @@
 
 @media (max-width: 480px) {
   .hero-side {
-    min-height: 400px;
+    min-height: 380px;
     padding: 40px 20px;
   }
 
@@ -212,14 +208,12 @@
   }
 
   .hero-bridge {
-    width: 100px;
-    height: 100px;
-    bottom: 16px;
-    right: 16px;
+    width: clamp(110px, 36vw, 150px);
+    height: clamp(110px, 36vw, 150px);
   }
 
   .hero-bridge img {
-    width: 70px;
+    width: clamp(80px, 28vw, 110px);
   }
 
   .hero-motto {
