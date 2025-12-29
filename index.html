@@ -1083,8 +1083,12 @@
           <input type="text" name="_honey" style="display: none" />
           <!-- Disable Captcha -->
           <input type="hidden" name="_captcha" value="false" />
-          <!-- Success Page -->
-          <input type="hidden" name="_next" value="/thanks.html" />
+          <!-- Success Page (absolute URL required by FormSubmit) -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://newbusinessusa.us/thanks.html"
+          />
           <div class="grid2">
             <label
               ><span data-i18n="form_name_label">Name</span
