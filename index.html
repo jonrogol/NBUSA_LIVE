@@ -989,7 +989,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <header class="modal-header">
-          <p class="modal-eyebrow">Quick View</p>
+          <p class="modal-eyebrow" data-i18n="group_modal_quick_view">Quick View</p>
           <h3 id="group-modal-title"></h3>
         </header>
         <div class="modal-body" id="group-modal-body">
@@ -1005,11 +1005,18 @@
             class="btn"
             href="#"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            data-i18n="group_modal_download"
           >
-            View/Download PDF
+            Download PDF
           </a>
-          <a href="#contact" class="btn outline" data-modal-contact>Contact</a>
+          <a
+            href="#contact"
+            class="btn outline"
+            data-modal-contact
+            data-i18n="group_modal_contact"
+            >Contact</a
+          >
         </div>
       </div>
     </div>
@@ -1023,7 +1030,7 @@
         <div class="downloads-grid">
           <a
             class="download-card"
-            href="assets/profiles/NB_USA_PROFILE.pdf"
+            href="https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_USA_PROFILE.pdf"
             download
             onclick="event.stopPropagation();"
           >
@@ -1308,6 +1315,50 @@
           download_profile_subtitle: 'PDF • Multilingual overview',
           download_action: 'Download',
           group_title: 'Our Group',
+          group_modal_quick_view: 'Quick View',
+          group_modal_download: 'Download PDF',
+          group_modal_contact: 'Contact',
+          group_label_head_office: 'Head Office',
+          group_label_registration: 'Registration / EIN',
+          group_label_incorporated: 'Incorporated',
+          group_label_founded: 'Founded',
+          group_label_representative_ceo: 'Representative / CEO',
+          group_label_capital: 'Capital',
+          group_label_affiliation: 'Affiliation',
+          group_label_fiscal_year: 'Fiscal Year End',
+          group_label_accounting: 'Accounting',
+          group_label_banking: 'Banking',
+          group_label_overview: 'Company Overview',
+          group_label_legal_name: 'Legal Name',
+          group_label_representative_director: 'Representative Director',
+          group_label_revenue: 'Annual Revenue (FY2024)',
+          group_label_employees: 'Employees',
+          group_label_telephone: 'Telephone',
+          group_label_primary_contact: 'Primary Contact',
+          group_label_phone: 'Phone',
+          group_label_email: 'Email',
+          group_label_cnpj: 'CNPJ',
+          group_activities_title_business: 'Business Activities',
+          group_activities_title_primary: 'Primary Business',
+          group_activities_title_segment: 'Segment / Focus',
+          group_value_usa_overview:
+            'Strategic bridge connecting North America, Japan, Brazil, and Southeast Asia with long-term partnerships.',
+          group_activity_usa_1:
+            'International trading and commercial representation for food, raw materials, packaging, and machinery',
+          group_activity_usa_2: 'Business and market strategy consulting',
+          group_activity_usa_3: 'Brand development and sales support for the North American market',
+          group_activity_usa_4:
+            'Import, export, and technical cooperation projects between Japan, Brazil, and broader Asia',
+          group_activity_japan_1: 'Renovation and remodeling services',
+          group_activity_japan_2: 'Import and sales operations',
+          group_activity_japan_3: 'Sports club management (Parque Sports Club / Wonderfes)',
+          group_activity_japan_4: 'Acquisition and sales of pre-owned vehicles',
+          group_activity_brazil_1: 'Holding company for non-financial institutions',
+          group_activity_brazil_2: 'Advertising agency services',
+          group_activity_brazil_3: 'Management of non-financial intangible assets',
+          group_activity_brazil_4: 'Variety retail (non-department store formats)',
+          group_activity_brazil_5: 'Purchase and sale of company-owned real estate',
+          group_activity_brazil_6: 'Specialty and general food retail operations',
           contact_title: 'Contact',
           contact_address: '850 New Burton Road, Suite 201, Dover, Delaware 19904, U.S.A.',
           send: 'Send',
@@ -1347,7 +1398,7 @@
           hero_pill2: '輸入業者・小売バイヤー',
           hero_pill3: 'コンプライアンス重視の物流チーム',
           hero_tag: '信頼性 • パートナーシップ • グローバルビジョン • イノベーション • 安心',
-          hero_cta_primary: '商談を予約する',
+          hero_cta_primary: 'お問い合わせ',
           hero_clarifier:
             '食品・包装バイヤーが日本・ブラジル・北米間で安心して製品を動かせるよう、越境サプライチェーンを構築・運営しています。',
           hero_cta_secondary: 'サービスを見る',
@@ -1377,7 +1428,7 @@
           stat_skus: '管理SKU数',
           stat_delivery: '納期遵守率',
           about_kicker: '企業情報',
-          about_title: '私たちについて',
+          about_title: '会社概要',
           about_lead:
             '逆境で育まれた友情と成功体験を軸に、AWBグループの歴史はレジリエンスと結束の物語です。',
           about_blurb:
@@ -1435,6 +1486,48 @@
           download_profile_subtitle: 'PDF・多言語版概要',
           download_action: 'ダウンロード',
           group_title: 'グループ',
+          group_modal_quick_view: 'クイックビュー',
+          group_modal_download: 'PDFをダウンロード',
+          group_modal_contact: 'お問い合わせ',
+          group_label_head_office: '本社',
+          group_label_registration: '登記／EIN',
+          group_label_incorporated: '設立',
+          group_label_founded: '設立',
+          group_label_representative_ceo: '代表／CEO',
+          group_label_capital: '資本金',
+          group_label_affiliation: '関連会社',
+          group_label_fiscal_year: '決算期',
+          group_label_accounting: '会計',
+          group_label_banking: '取引銀行',
+          group_label_overview: '会社概要',
+          group_label_legal_name: '法人名',
+          group_label_representative_director: '代表取締役',
+          group_label_revenue: '年間売上高（2024年度）',
+          group_label_employees: '従業員数',
+          group_label_telephone: '電話番号',
+          group_label_primary_contact: '主要連絡先',
+          group_label_phone: '電話',
+          group_label_email: 'メール',
+          group_label_cnpj: 'CNPJ',
+          group_activities_title_business: '事業内容',
+          group_activities_title_primary: '主な事業',
+          group_activities_title_segment: 'セグメント／フォーカス',
+          group_value_usa_overview:
+            '北米・日本・ブラジル・東南アジアを長期的パートナーシップでつなぐ戦略的ブリッジ。',
+          group_activity_usa_1: '食品・原料・包装資材・機械の国際取引と商業代理',
+          group_activity_usa_2: '事業・市場戦略コンサルティング',
+          group_activity_usa_3: '北米市場向けブランド開発と営業支援',
+          group_activity_usa_4: '日本・ブラジル・アジア間の輸出入および技術協力プロジェクト',
+          group_activity_japan_1: 'リノベーション・改装サービス',
+          group_activity_japan_2: '輸入販売事業',
+          group_activity_japan_3: 'スポーツクラブ運営（Parque Sports Club／Wonderfes）',
+          group_activity_japan_4: '中古車の仕入れと販売',
+          group_activity_brazil_1: 'ノンバンク事業の持株会社',
+          group_activity_brazil_2: '広告代理サービス',
+          group_activity_brazil_3: '無形資産（非金融）マネジメント',
+          group_activity_brazil_4: 'バラエティ小売（百貨店以外の形態）',
+          group_activity_brazil_5: '自社保有不動産の売買',
+          group_activity_brazil_6: '専門食材および一般食品の小売運営',
           contact_title: 'お問い合わせ',
           contact_address: '850 New Burton Road, Suite 201, Dover, Delaware 19904, U.S.A.',
           send: '送信',
@@ -1563,6 +1656,50 @@
           download_profile_subtitle: 'PDF • Visão geral multilíngue',
           download_action: 'Baixar',
           group_title: 'Nosso Grupo',
+          group_modal_quick_view: 'Visão rápida',
+          group_modal_download: 'Baixar PDF',
+          group_modal_contact: 'Contato',
+          group_label_head_office: 'Sede',
+          group_label_registration: 'Registro / EIN',
+          group_label_incorporated: 'Constituição',
+          group_label_founded: 'Fundação',
+          group_label_representative_ceo: 'Representante / CEO',
+          group_label_capital: 'Capital social',
+          group_label_affiliation: 'Afiliada',
+          group_label_fiscal_year: 'Encerramento do exercício',
+          group_label_accounting: 'Contabilidade',
+          group_label_banking: 'Banco',
+          group_label_overview: 'Visão geral da empresa',
+          group_label_legal_name: 'Razão social',
+          group_label_representative_director: 'Diretor representante',
+          group_label_revenue: 'Receita anual (FY2024)',
+          group_label_employees: 'Funcionários',
+          group_label_telephone: 'Telefone',
+          group_label_primary_contact: 'Contato principal',
+          group_label_phone: 'Telefone',
+          group_label_email: 'E-mail',
+          group_label_cnpj: 'CNPJ',
+          group_activities_title_business: 'Atividades empresariais',
+          group_activities_title_primary: 'Atividades principais',
+          group_activities_title_segment: 'Segmento / Foco',
+          group_value_usa_overview:
+            'Ponte estratégica que conecta América do Norte, Japão, Brasil e Sudeste Asiático por meio de parcerias de longo prazo.',
+          group_activity_usa_1:
+            'Comércio internacional e representação comercial de alimentos, matérias-primas, embalagens e máquinas',
+          group_activity_usa_2: 'Consultoria em estratégia de negócios e mercado',
+          group_activity_usa_3: 'Desenvolvimento de marca e suporte comercial para o mercado norte-americano',
+          group_activity_usa_4:
+            'Projetos de importação, exportação e cooperação técnica entre Japão, Brasil e Ásia',
+          group_activity_japan_1: 'Serviços de renovação e reforma',
+          group_activity_japan_2: 'Operações de importação e vendas',
+          group_activity_japan_3: 'Gestão de clubes esportivos (Parque Sports Club / Wonderfes)',
+          group_activity_japan_4: 'Compra e venda de veículos usados',
+          group_activity_brazil_1: 'Holding de instituições não financeiras',
+          group_activity_brazil_2: 'Serviços de agência de publicidade',
+          group_activity_brazil_3: 'Gestão de ativos intangíveis não financeiros',
+          group_activity_brazil_4: 'Varejo diversificado (formatos não departamentais)',
+          group_activity_brazil_5: 'Compra e venda de imóveis próprios',
+          group_activity_brazil_6: 'Operações de varejo de alimentos especializados e gerais',
           contact_title: 'Contato',
           contact_address: '850 New Burton Road, Suite 201, Dover, Delaware 19904, EUA.',
           send: 'Enviar',

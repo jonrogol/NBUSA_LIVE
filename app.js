@@ -547,30 +547,87 @@
   const focusableSelector =
     'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
+  const GROUP_PDF_URLS = Object.freeze({
+    usa: 'https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_USA_PROFILE.pdf',
+    japan: 'https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_JAPAN_PROFILE.pdf',
+    brazil: 'https://github.com/jonrogol/NBUSA_LIVE/releases/download/v1.1/NB_BRAZIL_PROFILE.pdf',
+  });
+
+  const getLocalizedString = (key) => {
+    if (!key) return '';
+    const tables = window.STR || {};
+    const lang = document.documentElement.lang || 'en';
+    const primary = tables[lang] || {};
+    const fallback = tables.en || {};
+    return primary[key] || fallback[key] || '';
+  };
+
   const GROUP_DATA = Object.freeze({
     usa: {
       title: 'New Business USA Inc.',
-      pdf: 'assets/profiles/NB_USA_PROFILE.pdf',
+      pdf: GROUP_PDF_URLS.usa,
       details: [
-        { label: 'Head Office', value: '850 New Burton Road, Suite 201, Dover, Delaware 19904, USA' },
-        { label: 'Registration / EIN', value: '99-1949602 (State of Delaware)' },
-        { label: 'Incorporated', value: 'March 14, 2024' },
-        { label: 'Representative / CEO', value: 'Gabriela Yonemoto Rogol' },
-        { label: 'Capital', value: 'US$132,933.26 (FY2024 closing)' },
         {
+          labelKey: 'group_label_head_office',
+          label: 'Head Office',
+          value: '850 New Burton Road, Suite 201, Dover, Delaware 19904, USA',
+        },
+        {
+          labelKey: 'group_label_registration',
+          label: 'Registration / EIN',
+          value: '99-1949602 (State of Delaware)',
+        },
+        {
+          labelKey: 'group_label_incorporated',
+          label: 'Incorporated',
+          value: 'March 14, 2024',
+        },
+        {
+          labelKey: 'group_label_representative_ceo',
+          label: 'Representative / CEO',
+          value: 'Gabriela Yonemoto Rogol',
+        },
+        {
+          labelKey: 'group_label_capital',
+          label: 'Capital',
+          value: 'US$132,933.26 (FY2024 closing)',
+        },
+        {
+          labelKey: 'group_label_affiliation',
           label: 'Affiliation',
           value: 'New Business Japan Co., Ltd. (100% shareholder) / AWB Group Japan',
         },
-        { label: 'Fiscal Year End', value: 'December 31' },
-        { label: 'Accounting', value: 'Tamazaki Accounting Office (Miami, Florida, USA)' },
-        { label: 'Banking', value: 'JPMorgan Chase Bank' },
         {
+          labelKey: 'group_label_fiscal_year',
+          label: 'Fiscal Year End',
+          value: 'December 31',
+        },
+        {
+          labelKey: 'group_label_accounting',
+          label: 'Accounting',
+          value: 'Tamazaki Accounting Office (Miami, Florida, USA)',
+        },
+        {
+          labelKey: 'group_label_banking',
+          label: 'Banking',
+          value: 'JPMorgan Chase Bank',
+        },
+        {
+          labelKey: 'group_label_overview',
           label: 'Company Overview',
+          valueKey: 'group_value_usa_overview',
           value:
             'Strategic bridge connecting North America, Japan, Brazil, and Southeast Asia with long-term partnerships.',
         },
       ],
+      activitiesTitleKey: 'group_activities_title_business',
       activitiesTitle: 'Business Activities',
+      activityKeys: [
+        'group_activity_usa_1',
+        'group_activity_usa_2',
+        'group_activity_usa_3',
+        'group_activity_usa_4',
+      ],
       activities: [
         'International trading and commercial representation for food, raw materials, packaging, and machinery',
         'Business and market strategy consulting',
@@ -580,19 +637,62 @@
     },
     japan: {
       title: 'New Business Japan Co., Ltd.',
-      pdf: 'assets/profiles/NB_JAPAN_PROFILE.pdf',
+      pdf: GROUP_PDF_URLS.japan,
       details: [
-        { label: 'Legal Name', value: 'Yugen Kaisha New Business Japan' },
-        { label: 'Head Office', value: '1907-1735 Iwai, Iwata-shi, Shizuoka 438-0016, Japan' },
-        { label: 'Founded', value: 'July 1, 2005 (Heisei 17)' },
-        { label: 'Representative Director', value: 'Hideki Yamanaka' },
-        { label: 'Capital', value: 'JPY 5,000,000' },
-        { label: 'Annual Revenue (FY2024)', value: 'JPY 285,000,000' },
-        { label: 'Employees', value: '4' },
-        { label: 'Telephone', value: '+81-53-401-8288' },
-        { label: 'Banking', value: 'Enshu Shinkin Bank; Hamamatsu Iwata Shinkin Bank' },
+        {
+          labelKey: 'group_label_legal_name',
+          label: 'Legal Name',
+          value: 'Yugen Kaisha New Business Japan',
+        },
+        {
+          labelKey: 'group_label_head_office',
+          label: 'Head Office',
+          value: '1907-1735 Iwai, Iwata-shi, Shizuoka 438-0016, Japan',
+        },
+        {
+          labelKey: 'group_label_founded',
+          label: 'Founded',
+          value: 'July 1, 2005 (Heisei 17)',
+        },
+        {
+          labelKey: 'group_label_representative_director',
+          label: 'Representative Director',
+          value: 'Hideki Yamanaka',
+        },
+        {
+          labelKey: 'group_label_capital',
+          label: 'Capital',
+          value: 'JPY 5,000,000',
+        },
+        {
+          labelKey: 'group_label_revenue',
+          label: 'Annual Revenue (FY2024)',
+          value: 'JPY 285,000,000',
+        },
+        {
+          labelKey: 'group_label_employees',
+          label: 'Employees',
+          value: '4',
+        },
+        {
+          labelKey: 'group_label_telephone',
+          label: 'Telephone',
+          value: '+81-53-401-8288',
+        },
+        {
+          labelKey: 'group_label_banking',
+          label: 'Banking',
+          value: 'Enshu Shinkin Bank; Hamamatsu Iwata Shinkin Bank',
+        },
       ],
+      activitiesTitleKey: 'group_activities_title_primary',
       activitiesTitle: 'Primary Business',
+      activityKeys: [
+        'group_activity_japan_1',
+        'group_activity_japan_2',
+        'group_activity_japan_3',
+        'group_activity_japan_4',
+      ],
       activities: [
         'Renovation and remodeling services',
         'Import and sales operations',
@@ -602,19 +702,37 @@
     },
     brazil: {
       title: 'New Business Brazil Participacoes Ltda.',
-      pdf: 'assets/profiles/NB_BRAZIL_PROFILE.pdf',
+      pdf: GROUP_PDF_URLS.brazil,
       details: [
         {
+          labelKey: 'group_label_head_office',
           label: 'Head Office',
           value: 'Rua Augusta 890, Conj. 904/905 Sala 4, Consolacao, Sao Paulo-SP 01304-001, Brazil',
         },
-        { label: 'CNPJ', value: '35.146.655/0001-57' },
-        { label: 'Founded', value: 'October 10, 2019' },
-        { label: 'Primary Contact', value: 'Edson Oda' },
-        { label: 'Phone', value: '+55 (19) 8230-0100' },
-        { label: 'Email', value: 'edson@movaimpex.com.br' },
+        { labelKey: 'group_label_cnpj', label: 'CNPJ', value: '35.146.655/0001-57' },
+        {
+          labelKey: 'group_label_founded',
+          label: 'Founded',
+          value: 'October 10, 2019',
+        },
+        {
+          labelKey: 'group_label_primary_contact',
+          label: 'Primary Contact',
+          value: 'Edson Oda',
+        },
+        { labelKey: 'group_label_phone', label: 'Phone', value: '+55 (19) 8230-0100' },
+        { labelKey: 'group_label_email', label: 'Email', value: 'edson@movaimpex.com.br' },
       ],
+      activitiesTitleKey: 'group_activities_title_segment',
       activitiesTitle: 'Segment / Focus',
+      activityKeys: [
+        'group_activity_brazil_1',
+        'group_activity_brazil_2',
+        'group_activity_brazil_3',
+        'group_activity_brazil_4',
+        'group_activity_brazil_5',
+        'group_activity_brazil_6',
+      ],
       activities: [
         'Holding company for non-financial institutions',
         'Advertising agency services',
@@ -740,26 +858,41 @@
 
       groupModalTitle.textContent = data.title;
       groupModalDetails.innerHTML = '';
-      (data.details || []).forEach(({ label, value }) => {
-        if (!label || !value) return;
+      (data.details || []).forEach((detail) => {
+        if (!detail) return;
+        const labelText = getLocalizedString(detail.labelKey) || detail.label || '';
+        const valueText = getLocalizedString(detail.valueKey) || detail.value || '';
+        if (!labelText || !valueText) return;
         const dt = document.createElement('dt');
-        dt.textContent = label;
+        dt.textContent = labelText;
         const dd = document.createElement('dd');
-        dd.textContent = value;
+        dd.textContent = valueText;
         groupModalDetails.appendChild(dt);
         groupModalDetails.appendChild(dd);
       });
 
       if (groupActivitiesSection && groupActivitiesList && groupActivitiesTitle) {
-        if (Array.isArray(data.activities) && data.activities.length) {
+        const localizedActivities = (() => {
+          if (Array.isArray(data.activityKeys) && data.activityKeys.length) {
+            const items = data.activityKeys
+              .map((key) => getLocalizedString(key))
+              .filter(Boolean);
+            if (items.length) return items;
+          }
+          return Array.isArray(data.activities) ? data.activities : [];
+        })();
+
+        if (localizedActivities.length) {
           groupActivitiesList.innerHTML = '';
-          data.activities.forEach((activity) => {
+          localizedActivities.forEach((activity) => {
             if (!activity) return;
             const li = document.createElement('li');
             li.textContent = activity;
             groupActivitiesList.appendChild(li);
           });
-          groupActivitiesTitle.textContent = data.activitiesTitle || 'Focus Areas';
+          const titleText =
+            getLocalizedString(data.activitiesTitleKey) || data.activitiesTitle || 'Focus Areas';
+          groupActivitiesTitle.textContent = titleText;
           groupActivitiesSection.hidden = false;
         } else {
           groupActivitiesSection.hidden = true;

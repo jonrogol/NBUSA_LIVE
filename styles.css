@@ -3392,6 +3392,12 @@ h2 {
   margin-inline: auto;
 }
 
+:root[lang='ja'] .hero-subtitle {
+  word-break: keep-all;
+  line-break: strict;
+  max-width: 100%;
+}
+
 /* Hero Flags - Circular trade network */
 .hero-flags {
   display: flex;
