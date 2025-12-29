@@ -542,6 +542,281 @@
   });
 })();
 
+/* Partner quick-view modal */
+(() => {
+  const focusableSelector =
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+  const GROUP_DATA = Object.freeze({
+    usa: {
+      title: 'New Business USA Inc.',
+      pdf: 'assets/profiles/NB_USA_PROFILE.pdf',
+      details: [
+        { label: 'Head Office', value: '850 New Burton Road, Suite 201, Dover, Delaware 19904, USA' },
+        { label: 'Registration / EIN', value: '99-1949602 (State of Delaware)' },
+        { label: 'Incorporated', value: 'March 14, 2024' },
+        { label: 'Representative / CEO', value: 'Gabriela Yonemoto Rogol' },
+        { label: 'Capital', value: 'US$132,933.26 (FY2024 closing)' },
+        {
+          label: 'Affiliation',
+          value: 'New Business Japan Co., Ltd. (100% shareholder) / AWB Group Japan',
+        },
+        { label: 'Fiscal Year End', value: 'December 31' },
+        { label: 'Accounting', value: 'Tamazaki Accounting Office (Miami, Florida, USA)' },
+        { label: 'Banking', value: 'JPMorgan Chase Bank' },
+        {
+          label: 'Company Overview',
+          value:
+            'Strategic bridge connecting North America, Japan, Brazil, and Southeast Asia with long-term partnerships.',
+        },
+      ],
+      activitiesTitle: 'Business Activities',
+      activities: [
+        'International trading and commercial representation for food, raw materials, packaging, and machinery',
+        'Business and market strategy consulting',
+        'Brand development and sales support for the North American market',
+        'Import, export, and technical cooperation projects between Japan, Brazil, and broader Asia',
+      ],
+    },
+    japan: {
+      title: 'New Business Japan Co., Ltd.',
+      pdf: 'assets/profiles/NB_JAPAN_PROFILE.pdf',
+      details: [
+        { label: 'Legal Name', value: 'Yugen Kaisha New Business Japan' },
+        { label: 'Head Office', value: '1907-1735 Iwai, Iwata-shi, Shizuoka 438-0016, Japan' },
+        { label: 'Founded', value: 'July 1, 2005 (Heisei 17)' },
+        { label: 'Representative Director', value: 'Hideki Yamanaka' },
+        { label: 'Capital', value: 'JPY 5,000,000' },
+        { label: 'Annual Revenue (FY2024)', value: 'JPY 285,000,000' },
+        { label: 'Employees', value: '4' },
+        { label: 'Telephone', value: '+81-53-401-8288' },
+        { label: 'Banking', value: 'Enshu Shinkin Bank; Hamamatsu Iwata Shinkin Bank' },
+      ],
+      activitiesTitle: 'Primary Business',
+      activities: [
+        'Renovation and remodeling services',
+        'Import and sales operations',
+        'Sports club management (Parque Sports Club / Wonderfes)',
+        'Acquisition and sales of pre-owned vehicles',
+      ],
+    },
+    brazil: {
+      title: 'New Business Brazil Participacoes Ltda.',
+      pdf: 'assets/profiles/NB_BRAZIL_PROFILE.pdf',
+      details: [
+        {
+          label: 'Head Office',
+          value: 'Rua Augusta 890, Conj. 904/905 Sala 4, Consolacao, Sao Paulo-SP 01304-001, Brazil',
+        },
+        { label: 'CNPJ', value: '35.146.655/0001-57' },
+        { label: 'Founded', value: 'October 10, 2019' },
+        { label: 'Primary Contact', value: 'Edson Oda' },
+        { label: 'Phone', value: '+55 (19) 8230-0100' },
+        { label: 'Email', value: 'edson@movaimpex.com.br' },
+      ],
+      activitiesTitle: 'Segment / Focus',
+      activities: [
+        'Holding company for non-financial institutions',
+        'Advertising agency services',
+        'Management of non-financial intangible assets',
+        'Variety retail (non-department store formats)',
+        'Purchase and sale of company-owned real estate',
+        'Specialty and general food retail operations',
+      ],
+    },
+  });
+
+  const ready = (fn) => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn, { once: true });
+    } else {
+      fn();
+    }
+  };
+
+  ready(() => {
+    const triggers = document.querySelectorAll('[data-modal-trigger]');
+    const partnerCards = document.querySelectorAll('.partner-card[data-group]');
+    if (!triggers.length && !partnerCards.length) return;
+
+    const body = document.body;
+    let activeModal = null;
+    let previousFocus = null;
+    const groupModalId = 'group-quick-view';
+    const groupModal = document.getElementById(groupModalId);
+    const groupModalTitle = groupModal ? groupModal.querySelector('#group-modal-title') : null;
+    const groupModalDetails = groupModal ? groupModal.querySelector('#group-modal-details') : null;
+    const groupActivitiesSection = groupModal ? groupModal.querySelector('#group-modal-activities') : null;
+    const groupActivitiesTitle = groupModal
+      ? groupModal.querySelector('#group-modal-activities-title')
+      : null;
+    const groupActivitiesList = groupModal
+      ? groupModal.querySelector('#group-modal-activities-list')
+      : null;
+    const groupModalPdf = groupModal ? groupModal.querySelector('#group-modal-pdf') : null;
+    const groupModalContact = groupModal
+      ? groupModal.querySelector('[data-modal-contact]')
+      : null;
+
+    const getFocusable = (container) =>
+      Array.from(container.querySelectorAll(focusableSelector)).filter((el) =>
+        el.offsetParent !== null || el === document.activeElement,
+      );
+
+    const trapFocus = (event) => {
+      if (event.key !== 'Tab' || !activeModal) return;
+      const focusable = getFocusable(activeModal);
+      if (!focusable.length) {
+        event.preventDefault();
+        activeModal.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    const handleKeydown = (event) => {
+      if (!activeModal) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+      if (event.key === 'Tab') {
+        trapFocus(event);
+      }
+    };
+
+    const handleModalClick = (event) => {
+      const target = event.target;
+      if (target && target.closest('[data-modal-close]')) {
+        event.preventDefault();
+        closeModal();
+      }
+    };
+
+    const openModal = (modalId, trigger) => {
+      const modal = document.getElementById(modalId);
+      if (!modal || activeModal === modal) return;
+      previousFocus = trigger || document.activeElement;
+      activeModal = modal;
+      modal.removeAttribute('hidden');
+      requestAnimationFrame(() => modal.classList.add('is-visible'));
+      body.classList.add('modal-open');
+      modal.addEventListener('click', handleModalClick);
+      document.addEventListener('keydown', handleKeydown);
+      const focusTarget = getFocusable(modal)[0] || modal;
+      focusTarget.focus();
+    };
+
+    const closeModal = () => {
+      if (!activeModal) return;
+      const modal = activeModal;
+      modal.classList.remove('is-visible');
+      modal.removeEventListener('click', handleModalClick);
+      document.removeEventListener('keydown', handleKeydown);
+      body.classList.remove('modal-open');
+      window.setTimeout(() => {
+        modal.setAttribute('hidden', '');
+      }, 250);
+      if (previousFocus && typeof previousFocus.focus === 'function') {
+        previousFocus.focus();
+      }
+      previousFocus = null;
+      activeModal = null;
+    };
+
+    const populateGroupModal = (groupId) => {
+      if (!groupModal || !groupModalTitle || !groupModalDetails) return false;
+      const data = GROUP_DATA[groupId];
+      if (!data) return false;
+
+      groupModalTitle.textContent = data.title;
+      groupModalDetails.innerHTML = '';
+      (data.details || []).forEach(({ label, value }) => {
+        if (!label || !value) return;
+        const dt = document.createElement('dt');
+        dt.textContent = label;
+        const dd = document.createElement('dd');
+        dd.textContent = value;
+        groupModalDetails.appendChild(dt);
+        groupModalDetails.appendChild(dd);
+      });
+
+      if (groupActivitiesSection && groupActivitiesList && groupActivitiesTitle) {
+        if (Array.isArray(data.activities) && data.activities.length) {
+          groupActivitiesList.innerHTML = '';
+          data.activities.forEach((activity) => {
+            if (!activity) return;
+            const li = document.createElement('li');
+            li.textContent = activity;
+            groupActivitiesList.appendChild(li);
+          });
+          groupActivitiesTitle.textContent = data.activitiesTitle || 'Focus Areas';
+          groupActivitiesSection.hidden = false;
+        } else {
+          groupActivitiesSection.hidden = true;
+        }
+      }
+
+      if (groupModalPdf) {
+        if (data.pdf) {
+          groupModalPdf.href = data.pdf;
+          groupModalPdf.removeAttribute('aria-disabled');
+        } else {
+          groupModalPdf.href = '#';
+          groupModalPdf.setAttribute('aria-disabled', 'true');
+        }
+      }
+
+      return true;
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = trigger.getAttribute('data-modal-trigger');
+        if (!targetId) return;
+        openModal(targetId, trigger);
+      });
+    });
+
+    partnerCards.forEach((card) => {
+      card.addEventListener('click', (event) => {
+        event.preventDefault();
+        const groupId = card.dataset.group;
+        if (!groupId) return;
+        const readyToShow = populateGroupModal(groupId);
+        if (!readyToShow) return;
+        openModal(groupModalId, card);
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!activeModal) return;
+      if (event.target === activeModal.querySelector('.modal-backdrop')) {
+        closeModal();
+      }
+    });
+
+    if (groupModalContact) {
+      groupModalContact.addEventListener('click', () => {
+        previousFocus = null;
+        window.setTimeout(() => {
+          closeModal();
+        }, 350);
+      });
+    }
+  });
+})();
+
 /* Language selector and translations */
 (() => {
   const strings = window.STR || {};

@@ -60,158 +60,162 @@
               <a class="nav-link contact-link" href="#contact" data-i18n="nav_contact">Contact</a>
             </nav>
             <div class="toolbar">
-              <div class="lang-select" data-open="false">
-                <button class="lang-current" aria-expanded="false" aria-haspopup="true">
-                  <span class="lang-flag" aria-hidden="true">
-                    <img
-                      src="assets/flag-usa.svg"
-                      width="24"
-                      height="16"
-                      alt=""
-                      data-current-flag
-                      data-default-src="assets/flag-usa.svg"
-                    />
-                  </span>
-                  <span class="lang-label lang-code">EN</span>
-                  <span class="lang-name">English</span>
+              <div class="toolbar-group" aria-label="Display options">
+                <div class="lang-select" data-open="false">
+                  <button class="lang-current" aria-expanded="false" aria-haspopup="true">
+                    <span class="lang-flag" aria-hidden="true">
+                      <img
+                        src="assets/flag-usa.svg"
+                        width="24"
+                        height="16"
+                        alt=""
+                        data-current-flag
+                        data-default-src="assets/flag-usa.svg"
+                      />
+                    </span>
+                    <span class="lang-label lang-code">EN</span>
+                    <span class="lang-name">English</span>
+                    <svg
+                      class="chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M6 8l4 4 4-4"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="lang-dropdown" role="menu">
+                    <button
+                      id="lang-en"
+                      class="lang-option"
+                      type="button"
+                      role="menuitem"
+                      aria-current="true"
+                    >
+                      <span class="lang-flag" aria-hidden="true"
+                        ><img src="assets/flag-usa.svg" width="24" height="16" alt=""
+                      /></span>
+                      <span class="lang-option-label">
+                        <span class="lang-option-name">English</span>
+                        <span class="lang-option-code">EN</span>
+                      </span>
+                    </button>
+                    <button id="lang-ja" class="lang-option" type="button" role="menuitem">
+                      <span class="lang-flag" aria-hidden="true"
+                        ><img src="assets/flag-japan.svg" width="24" height="16" alt=""
+                      /></span>
+                      <span class="lang-option-label">
+                        <span class="lang-option-name">日本語</span>
+                        <span class="lang-option-code">JA</span>
+                      </span>
+                    </button>
+                    <button id="lang-pt" class="lang-option" type="button" role="menuitem">
+                      <span class="lang-flag" aria-hidden="true"
+                        ><img src="assets/flag-brazil.svg" width="24" height="16" alt=""
+                      /></span>
+                      <span class="lang-option-label">
+                        <span class="lang-option-name">Português</span>
+                        <span class="lang-option-code">PT</span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
                   <svg
-                    class="chevron"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 20 20"
+                    class="theme-icon theme-icon-sun"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="4.5"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      fill="none"
+                    />
+                    <line x1="12" y1="2" x2="12" y2="5.2" stroke="currentColor" stroke-width="1.6" />
+                    <line
+                      x1="12"
+                      y1="18.8"
+                      x2="12"
+                      y2="22"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <line x1="2" y1="12" x2="5.2" y2="12" stroke="currentColor" stroke-width="1.6" />
+                    <line
+                      x1="18.8"
+                      y1="12"
+                      x2="22"
+                      y2="12"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <line
+                      x1="4.4"
+                      y1="4.4"
+                      x2="6.7"
+                      y2="6.7"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <line
+                      x1="17.3"
+                      y1="17.3"
+                      x2="19.6"
+                      y2="19.6"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <line
+                      x1="4.4"
+                      y1="19.6"
+                      x2="6.7"
+                      y2="17.3"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <line
+                      x1="17.3"
+                      y1="6.7"
+                      x2="19.6"
+                      y2="4.4"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                  </svg>
+                  <svg
+                    class="theme-icon theme-icon-moon"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     fill="none"
                     aria-hidden="true"
                   >
                     <path
-                      d="M6 8l4 4 4-4"
+                      d="M21 12.8A9 9 0 0111.2 3 7 7 0 1021 12.8z"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke-width="1.6"
+                      fill="none"
                     />
                   </svg>
                 </button>
-                <div class="lang-dropdown" role="menu">
-                  <button
-                    id="lang-en"
-                    class="lang-option"
-                    type="button"
-                    role="menuitem"
-                    aria-current="true"
-                  >
-                    <span class="lang-flag" aria-hidden="true"
-                      ><img src="assets/flag-usa.svg" width="24" height="16" alt=""
-                    /></span>
-                    <span class="lang-option-label">
-                      <span class="lang-option-name">English</span>
-                      <span class="lang-option-code">EN</span>
-                    </span>
-                  </button>
-                  <button id="lang-ja" class="lang-option" type="button" role="menuitem">
-                    <span class="lang-flag" aria-hidden="true"
-                      ><img src="assets/flag-japan.svg" width="24" height="16" alt=""
-                    /></span>
-                    <span class="lang-option-label">
-                      <span class="lang-option-name">日本語</span>
-                      <span class="lang-option-code">JA</span>
-                    </span>
-                  </button>
-                  <button id="lang-pt" class="lang-option" type="button" role="menuitem">
-                    <span class="lang-flag" aria-hidden="true"
-                      ><img src="assets/flag-brazil.svg" width="24" height="16" alt=""
-                    /></span>
-                    <span class="lang-option-label">
-                      <span class="lang-option-name">Português</span>
-                      <span class="lang-option-code">PT</span>
-                    </span>
-                  </button>
-                </div>
               </div>
-              <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-                <svg
-                  class="theme-icon theme-icon-sun"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="4.5"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    fill="none"
-                  />
-                  <line x1="12" y1="2" x2="12" y2="5.2" stroke="currentColor" stroke-width="1.6" />
-                  <line
-                    x1="12"
-                    y1="18.8"
-                    x2="12"
-                    y2="22"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-                  <line x1="2" y1="12" x2="5.2" y2="12" stroke="currentColor" stroke-width="1.6" />
-                  <line
-                    x1="18.8"
-                    y1="12"
-                    x2="22"
-                    y2="12"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-                  <line
-                    x1="4.4"
-                    y1="4.4"
-                    x2="6.7"
-                    y2="6.7"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-                  <line
-                    x1="17.3"
-                    y1="17.3"
-                    x2="19.6"
-                    y2="19.6"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-                  <line
-                    x1="4.4"
-                    y1="19.6"
-                    x2="6.7"
-                    y2="17.3"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-                  <line
-                    x1="17.3"
-                    y1="6.7"
-                    x2="19.6"
-                    y2="4.4"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-                </svg>
-                <svg
-                  class="theme-icon theme-icon-moon"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M21 12.8A9 9 0 0111.2 3 7 7 0 1021 12.8z"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    fill="none"
-                  />
-                </svg>
-              </button>
-              <a href="#contact" class="contact-cta btn" data-i18n="nav_contact_cta">Contact</a>
+              <a href="#contact" class="contact-cta btn" data-i18n="nav_contact_cta"
+                >Schedule a consult</a
+              >
             </div>
           </div>
         </div>
@@ -242,8 +246,18 @@
               >trade and innovation.</span
             >
           </h1>
+          <p class="hero-clarifier" data-i18n="hero_clarifier">
+            We build and run the cross-border supply chain so food and packaging buyers can move
+            product between Japan, Brazil, and North America with confidence.
+          </p>
+          <ul class="hero-pills" aria-label="Industries and teams we support">
+            <li data-i18n="hero_pill1">Food &amp; packaging makers</li>
+            <li data-i18n="hero_pill2">Importers &amp; retail buyers</li>
+            <li data-i18n="hero_pill3">Compliance-focused logistics teams</li>
+          </ul>
           <p class="hero-sub" data-i18n="hero_support">
-            Your strategic partner for international trading, consulting, and brand development.
+            Helping food and packaging brands move products across borders with regulatory
+            confidence and operational reliability.
           </p>
           <div class="hero-flags">
             <div
@@ -330,11 +344,44 @@
             innovation and partnership.
           </p>
           <div class="hero-cta">
-            <a href="#contact" class="btn" data-i18n="hero_cta_primary">Start a conversation</a>
+            <a href="#contact" class="btn" data-i18n="hero_cta_primary">Book a trade consult</a>
             <a href="#services" class="btn outline" data-i18n="hero_cta_secondary"
               >Explore services</a
             >
           </div>
+          <div class="hero-proof" aria-label="Key proof points">
+            <span>
+              <strong>25+ years</strong>
+              <span>international trade experience</span>
+            </span>
+            <span>
+              <strong>3 core markets</strong>
+              <span>Japan · Brazil · USA</span>
+            </span>
+            <span>
+              <strong>ISO &amp; HACCP</strong>
+              <span>compliance-ready partners</span>
+            </span>
+          </div>
+          <a class="scroll-cue" href="#about" aria-label="Scroll to learn about NBUSA">
+            <span>Scroll</span>
+            <svg width="10" height="24" viewBox="0 0 10 24" fill="none" aria-hidden="true">
+              <path
+                d="M5 0v18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                opacity="0.6"
+              />
+              <path
+                d="M1 14l4 4 4-4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -853,35 +900,119 @@
           <h2 data-i18n="group_title">Our Group</h2>
         </div>
         <div class="grid-4 partner-grid">
-          <a class="card partner-card" href="#" target="_blank" rel="noopener noreferrer">
-            <div class="card-logo">
+          <button
+            type="button"
+            class="card partner-card"
+            data-group="usa"
+            aria-haspopup="dialog"
+            aria-controls="group-quick-view"
+          >
+            <div class="group-card__meta">
+              <span class="badge group-card__pill">USA</span>
+            </div>
+            <div class="card-logo group-card__logo-zone">
               <img
                 loading="lazy"
-                src="assets/logo-newbusiness-japan.png"
+                src="assets/logos/nbusa-usa.svg"
+                alt="New Business USA logo"
+              />
+            </div>
+            <div class="group-card__body">
+              <h3>New Business USA</h3>
+              <p class="muted group-card__descriptor" data-i18n="partner_nb_usa">
+                Cross-border supply chain &amp; compliance
+              </p>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="card partner-card"
+            data-group="japan"
+            aria-haspopup="dialog"
+            aria-controls="group-quick-view"
+          >
+            <div class="group-card__meta">
+              <span class="badge group-card__pill" data-i18n="badge_japan">Japan</span>
+            </div>
+            <div class="card-logo group-card__logo-zone">
+              <img
+                loading="lazy"
+                src="assets/logos/nb_japan.png"
                 alt="New Business Japan logo"
               />
             </div>
-            <div class="meta"><span class="badge" data-i18n="badge_japan">Japan</span></div>
-            <h3>New Business Japan</h3>
-            <p class="muted" data-i18n="partner_nb_japan">Local operations for NBUSA.</p>
-          </a>
-          <a class="card partner-card" href="#" target="_blank" rel="noopener noreferrer">
-            <div class="card-logo">
+            <div class="group-card__body">
+              <h3>New Business Japan</h3>
+              <p class="muted group-card__descriptor" data-i18n="partner_nb_japan">
+                Operations &amp; partnerships in Japan
+              </p>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="card partner-card"
+            data-group="brazil"
+            aria-haspopup="dialog"
+            aria-controls="group-quick-view"
+          >
+            <div class="group-card__meta">
+              <span class="badge group-card__pill" data-i18n="badge_brazil">Brazil</span>
+            </div>
+            <div class="card-logo group-card__logo-zone">
               <img
                 loading="lazy"
-                src="assets/logo-newbusiness-brazil.png"
+                src="assets/logos/nbusa-brazil.svg"
                 alt="New Business Brazil logo"
               />
             </div>
-            <div class="meta"><span class="badge" data-i18n="badge_brazil">Brazil</span></div>
-            <h3>New Business Brazil</h3>
-            <p class="muted" data-i18n="partner_nb_brazil">
-              Local distribution network across Brazil.
-            </p>
-          </a>
+            <div class="group-card__body">
+              <h3>New Business Brazil</h3>
+              <p class="muted group-card__descriptor" data-i18n="partner_nb_brazil">
+                Commercial operations in Brazil
+              </p>
+            </div>
+          </button>
         </div>
       </div>
     </section>
+    <div id="group-quick-view" class="modal" hidden>
+      <div class="modal-backdrop" data-modal-close></div>
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="group-modal-title"
+        aria-describedby="group-modal-body"
+        tabindex="-1"
+      >
+        <button class="modal-close" type="button" aria-label="Close dialog" data-modal-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <header class="modal-header">
+          <p class="modal-eyebrow">Quick View</p>
+          <h3 id="group-modal-title"></h3>
+        </header>
+        <div class="modal-body" id="group-modal-body">
+          <dl class="modal-details" id="group-modal-details"></dl>
+          <div class="modal-section" id="group-modal-activities" hidden>
+            <h4 id="group-modal-activities-title"></h4>
+            <ul class="modal-list" id="group-modal-activities-list"></ul>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <a
+            id="group-modal-pdf"
+            class="btn"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            View/Download PDF
+          </a>
+          <a href="#contact" class="btn outline" data-modal-contact>Contact</a>
+        </div>
+      </div>
+    </div>
 
     <!-- DOWNLOADS -->
     <section id="downloads" class="section section-alt reveal anchor-offset">
@@ -892,7 +1023,7 @@
         <div class="downloads-grid">
           <a
             class="download-card"
-            href="assets/NBUSA_PROFILE.pdf"
+            href="assets/profiles/NB_USA_PROFILE.pdf"
             download
             onclick="event.stopPropagation();"
           >
@@ -914,7 +1045,7 @@
               </svg>
             </span>
             <span class="download-meta">
-              <span class="download-title" data-i18n="download_profile_title">Company Profile</span>
+              <span class="download-title" data-i18n="download_profile_title">NBUSA Company Profile</span>
               <span class="download-subtitle" data-i18n="download_profile_subtitle"
                 >PDF • Multilingual overview</span
               >
@@ -987,14 +1118,6 @@
             <button class="btn" type="submit" data-i18n="send">Send</button>
           </div>
         </form>
-        <div class="map-embed">
-          <iframe
-            src="https://www.google.com/maps?q=850+New+Burton+Road,+Suite+201,+Dover,+Delaware+19904&output=embed"
-            loading="lazy"
-            title="NBUSA office map for Dover, Delaware"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
       </div>
     </section>
 
@@ -1088,12 +1211,17 @@
           nav_group: 'Our Group',
           nav_downloads: 'Downloads',
           nav_contact: 'Contact',
-          nav_contact_cta: 'Contact',
+          nav_contact_cta: 'Schedule a consult',
           hero_title: 'Connecting Japan, Brazil, and North America through trade and innovation.',
           hero_support:
-            'Your strategic partner for international trading, consulting, and brand development.',
+            'Helping food and packaging brands move products across borders with regulatory confidence and operational reliability.',
+          hero_pill1: 'Food & packaging makers',
+          hero_pill2: 'Importers & retail buyers',
+          hero_pill3: 'Compliance-focused logistics teams',
           hero_tag: 'Credibility • Partnership • International Reach • Innovation • Reliability',
-          hero_cta_primary: 'Start a conversation',
+          hero_cta_primary: 'Book a trade consult',
+          hero_clarifier:
+            'We build and run the cross-border supply chain so food and packaging buyers can move product between Japan, Brazil, and North America with confidence.',
           hero_cta_secondary: 'Explore services',
           flag_japan: 'Japan',
           flag_brazil: 'Brazil',
@@ -1172,10 +1300,11 @@
             'Our approach combines the meticulous attention to detail found in Japanese business culture with the entrepreneurial spirit of Brazil and the innovation of North America.',
           badge_japan: 'Japan',
           badge_brazil: 'Brazil',
-          partner_nb_japan: 'Local operations for NBUSA.',
-          partner_nb_brazil: 'Local distribution network across Brazil.',
+          partner_nb_usa: 'Cross-border supply chain & compliance',
+          partner_nb_japan: 'Operations & partnerships in Japan',
+          partner_nb_brazil: 'Commercial operations in Brazil',
           downloads_title: 'Downloads',
-          download_profile_title: 'Company Profile',
+          download_profile_title: 'NBUSA Company Profile',
           download_profile_subtitle: 'PDF • Multilingual overview',
           download_action: 'Download',
           group_title: 'Our Group',
@@ -1209,12 +1338,18 @@
           nav_group: 'グループ',
           nav_downloads: '資料ダウンロード',
           nav_contact: 'お問い合わせ',
-          nav_contact_cta: 'お問い合わせ',
+          nav_contact_cta: '相談を予約',
           hero_title:
             '<span class="jp-line">貿易とイノベーションで</span><span class="jp-line">日本・ブラジル・北米をつなぐ。</span>',
-          hero_support: '国際貿易・コンサルティング・ブランド開発の戦略的パートナー。',
+          hero_support:
+            '食品・包装ブランドが国境を越えて安心して製品を動かせるよう、規制対応とオペレーションの信頼性を支えます。',
+          hero_pill1: '食品・包装メーカー',
+          hero_pill2: '輸入業者・小売バイヤー',
+          hero_pill3: 'コンプライアンス重視の物流チーム',
           hero_tag: '信頼性 • パートナーシップ • グローバルビジョン • イノベーション • 安心',
-          hero_cta_primary: 'ご相談はこちら',
+          hero_cta_primary: '商談を予約する',
+          hero_clarifier:
+            '食品・包装バイヤーが日本・ブラジル・北米間で安心して製品を動かせるよう、越境サプライチェーンを構築・運営しています。',
           hero_cta_secondary: 'サービスを見る',
           flag_japan: '日本',
           flag_brazil: 'ブラジル',
@@ -1292,8 +1427,9 @@
             '日本のビジネス文化が持つ緻密さに、ブラジルの起業家精神と北米のイノベーションを融合させたアプローチで支援します。',
           badge_japan: '日本',
           badge_brazil: 'ブラジル',
-          partner_nb_japan: 'NBUSAの日本事業運営。',
-          partner_nb_brazil: 'ブラジル国内の流通ネットワークを展開。',
+          partner_nb_usa: '越境サプライチェーンとコンプライアンス',
+          partner_nb_japan: '日本でのオペレーションとパートナーシップ',
+          partner_nb_brazil: 'ブラジルでの商業オペレーション',
           downloads_title: '資料ダウンロード',
           download_profile_title: '会社概要資料',
           download_profile_subtitle: 'PDF・多言語版概要',
@@ -1328,13 +1464,18 @@
           nav_group: 'Nosso Grupo',
           nav_downloads: 'Downloads',
           nav_contact: 'Contato',
-          nav_contact_cta: 'Fale Conosco',
+          nav_contact_cta: 'Agende uma consulta',
           hero_title:
             'Conectando Japão, Brasil e América do Norte por meio de comércio e inovação.',
           hero_support:
-            'Seu parceiro estratégico em comércio internacional, consultoria e desenvolvimento de marcas.',
+            'Ajudamos marcas de alimentos e embalagens a mover produtos entre fronteiras com confiança regulatória e confiabilidade operacional.',
+          hero_pill1: 'Fabricantes de alimentos e embalagens',
+          hero_pill2: 'Importadores e compradores de varejo',
+          hero_pill3: 'Equipes de logística focadas em compliance',
           hero_tag: 'Credibilidade • Parceria • Alcance Internacional • Inovação • Confiabilidade',
-          hero_cta_primary: 'Inicie uma conversa',
+          hero_cta_primary: 'Agende uma consultoria comercial',
+          hero_clarifier:
+            'Construímos e operamos a cadeia de suprimentos transfronteiriça para que compradores de alimentos e embalagens movam produtos entre Japão, Brasil e América do Norte com confiança.',
           hero_cta_secondary: 'Veja os serviços',
           flag_japan: 'Japão',
           flag_brazil: 'Brasil',
@@ -1414,8 +1555,9 @@
             'Nossa abordagem combina a atenção meticulosa aos detalhes da cultura empresarial japonesa com o espírito empreendedor do Brasil e a inovação da América do Norte.',
           badge_japan: 'Japão',
           badge_brazil: 'Brasil',
-          partner_nb_japan: 'Operações locais da NBUSA no Japão.',
-          partner_nb_brazil: 'Rede de distribuição local em todo o Brasil.',
+          partner_nb_usa: 'Cadeia de suprimentos transfronteiriça e compliance',
+          partner_nb_japan: 'Operações e parcerias no Japão',
+          partner_nb_brazil: 'Operações comerciais no Brasil',
           downloads_title: 'Downloads',
           download_profile_title: 'Perfil da Empresa',
           download_profile_subtitle: 'PDF • Visão geral multilíngue',
