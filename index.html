@@ -397,28 +397,29 @@
           <span class="kicker" data-i18n="about_kicker">Who We Are</span>
           <h2 data-i18n="about_title">Our Story</h2>
           <div class="about-story-copy">
-            <p class="lead" data-i18n="about_blurb">
-              New Business USA Inc. was established as a lean international trade hub, built on
-              more than 25 years of hands-on experience in global business development, sourcing,
-              and cross-border operations.
+            <p class="lead story-positioning" data-i18n="about_blurb">
+              New Business USA Inc. is a lean international trade hub built on more than 25 years
+              of hands-on experience in global business development and cross-border operations.
             </p>
-            <p data-i18n="about_story_para2">
-              The company has long connected opportunities between Japan, Brazil, and other
-              strategic markets, and now extends its operations to the United States, supporting
-              manufacturers, distributors, and partners with structured trade execution, regulatory
-              alignment, and long-term market development.
-            </p>
-            <p data-i18n="about_story_para3">
-              New Business USA Inc. does not operate manufacturing facilities. Instead, it works
-              alongside qualified producers, logistics providers, and compliance specialists,
-              acting as an integration point between markets, cultures, and regulatory
-              environments.
-            </p>
-            <p data-i18n="about_story_para4">
-              This operating model allows NBUSA to remain agile, independent, and focused on value
-              creation, while maintaining strong, long-standing relationships across Asia, the
-              Americas, and selected international markets.
-            </p>
+            <div class="story-body">
+              <p data-i18n="about_story_para2">
+                The company has long connected opportunities between Japan, Brazil, and other
+                strategic markets, and now extends its operations to the United States, supporting
+                manufacturers, distributors, and partners with structured trade execution,
+                regulatory alignment, and long-term market development.
+              </p>
+              <p data-i18n="about_story_para3">
+                New Business USA Inc. does not operate manufacturing facilities. Instead, it works
+                alongside qualified producers, logistics providers, and compliance specialists,
+                acting as an integration point between markets, cultures, and regulatory
+                environments.
+              </p>
+              <p data-i18n="about_story_para4">
+                This operating model allows NBUSA to remain agile, independent, and focused on
+                value creation, while maintaining strong, long-standing relationships across Asia,
+                the Americas, and selected international markets.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -459,18 +460,24 @@
           </div>
         </div>
 
-        <figure class="pull-quote reveal">
-          <blockquote data-i18n="about_quote">
-            "NBUSA gives us confidence that every shipment will land on time across three
-            continents."
-          </blockquote>
-          <figcaption data-i18n="about_quote_attr">
-            Logistics Director, São Paulo Partner
-          </figcaption>
-        </figure>
-        <p class="muted testimonial-disclaimer" data-i18n="testimonial_disclaimer">
-          Client feedback shown is representative of individual project experiences.
-        </p>
+        <div class="testimonial-block">
+          <figure class="pull-quote reveal">
+            <blockquote data-i18n="about_quote">
+              "NBUSA gives us confidence that every shipment will land on time across three
+              continents."
+            </blockquote>
+            <figcaption>
+              <span class="quote-role" data-i18n="about_quote_role">Logistics Director</span>
+              <span class="quote-location" data-i18n="about_quote_location"
+                >São Paulo–based partner</span
+              >
+            </figcaption>
+          </figure>
+          <p class="testimonial-disclaimer" data-i18n="testimonial_disclaimer">
+            Client feedback shown is representative of individual project experiences. Results may
+            vary depending on project scope, market conditions, and partner execution.
+          </p>
+        </div>
 
         <blockquote class="mission">
           <p data-i18n="mission_quote">
@@ -1347,7 +1354,7 @@
           about_lead:
             'New Business USA Inc. was established as a lean international trade hub, built on more than 25 years of hands-on experience in global business development, sourcing, and cross-border operations.',
           about_blurb:
-            'New Business USA Inc. was established as a lean international trade hub, built on more than 25 years of hands-on experience in global business development, sourcing, and cross-border operations.',
+            'New Business USA Inc. is a lean international trade hub built on more than 25 years of hands-on experience in global business development and cross-border operations.',
           about_story_para2:
             'The company has long connected opportunities between Japan, Brazil, and other strategic markets, and now extends its operations to the United States, supporting manufacturers, distributors, and partners with structured trade execution, regulatory alignment, and long-term market development.',
           about_story_para3:
@@ -1356,9 +1363,10 @@
             'This operating model allows NBUSA to remain agile, independent, and focused on value creation, while maintaining strong, long-standing relationships across Asia, the Americas, and selected international markets.',
           about_quote:
             '"NBUSA gives us confidence that every shipment will land on time across three continents."',
-          about_quote_attr: 'Logistics Director, São Paulo Partner',
+          about_quote_role: 'Logistics Director',
+          about_quote_location: 'São Paulo–based partner',
           testimonial_disclaimer:
-            'Client feedback shown is representative of individual project experiences.',
+            'Client feedback shown is representative of individual project experiences. Results may vary depending on project scope, market conditions, and partner execution.',
           timeline_origins_title: 'Origins',
           timeline_origins_body:
             'Three Brazilian immigrants met in Japan in 1998, young, ambitious, and driven by the same dream: to create opportunity where few believed it was possible. What began as friendship soon became a shared journey of learning, success, rivalry, and resilience.',
@@ -1554,7 +1562,7 @@
           about_lead:
             'New Business USA Inc. was established as a lean international trade hub, built on more than 25 years of hands-on experience in global business development, sourcing, and cross-border operations.',
           about_blurb:
-            'New Business USA Inc. was established as a lean international trade hub, built on more than 25 years of hands-on experience in global business development, sourcing, and cross-border operations.',
+            'New Business USA Inc. is a lean international trade hub built on more than 25 years of hands-on experience in global business development and cross-border operations.',
           about_story_para2:
             'The company has long connected opportunities between Japan, Brazil, and other strategic markets, and now extends its operations to the United States, supporting manufacturers, distributors, and partners with structured trade execution, regulatory alignment, and long-term market development.',
           about_story_para3:
@@ -1563,9 +1571,11 @@
             'This operating model allows NBUSA to remain agile, independent, and focused on value creation, while maintaining strong, long-standing relationships across Asia, the Americas, and selected international markets.',
           about_quote:
             '「NBUSAのおかげで、三大陸のどの港でも出荷が予定通りに到着すると確信できます。」',
-          about_quote_attr: 'サンパウロ・パートナー 物流責任者',
+          // TODO: Translate testimonial role/location (JA).
+          about_quote_role: 'Logistics Director',
+          about_quote_location: 'São Paulo–based partner',
           testimonial_disclaimer:
-            'Client feedback shown is representative of individual project experiences.',
+            'Client feedback shown is representative of individual project experiences. Results may vary depending on project scope, market conditions, and partner execution.',
           timeline_origins_title: '創業期',
           timeline_origins_body:
             '1998年、日本で出会った3人のブラジル人は、可能性が少ないとされた場所に機会を創りたいという共通の夢を抱いていました。友情はやがて学びと成功、競争と粘り強さを共有する旅へと発展しました。',
@@ -1757,7 +1767,7 @@
           about_lead:
             'New Business USA Inc. was established as a lean international trade hub, built on more than 25 years of hands-on experience in global business development, sourcing, and cross-border operations.',
           about_blurb:
-            'New Business USA Inc. was established as a lean international trade hub, built on more than 25 years of hands-on experience in global business development, sourcing, and cross-border operations.',
+            'New Business USA Inc. is a lean international trade hub built on more than 25 years of hands-on experience in global business development and cross-border operations.',
           about_story_para2:
             'The company has long connected opportunities between Japan, Brazil, and other strategic markets, and now extends its operations to the United States, supporting manufacturers, distributors, and partners with structured trade execution, regulatory alignment, and long-term market development.',
           about_story_para3:
@@ -1766,9 +1776,11 @@
             'This operating model allows NBUSA to remain agile, independent, and focused on value creation, while maintaining strong, long-standing relationships across Asia, the Americas, and selected international markets.',
           about_quote:
             '"A NBUSA nos dá confiança de que cada envio chegará no prazo nos três continentes."',
-          about_quote_attr: 'Diretor de Logística, Parceiro em São Paulo',
+          // TODO: Translate testimonial role/location (PT-BR).
+          about_quote_role: 'Logistics Director',
+          about_quote_location: 'São Paulo–based partner',
           testimonial_disclaimer:
-            'Client feedback shown is representative of individual project experiences.',
+            'Client feedback shown is representative of individual project experiences. Results may vary depending on project scope, market conditions, and partner execution.',
           timeline_origins_title: 'Origens',
           timeline_origins_body:
             'Três imigrantes brasileiros se encontraram no Japão em 1998, jovens, ambiciosos e movidos pelo mesmo sonho: criar oportunidades onde poucos acreditavam ser possível. A amizade logo se transformou em uma jornada compartilhada de aprendizado, sucesso, rivalidade e resiliência.',
